@@ -47,6 +47,7 @@ const manifest = {
     '*://*.kimi.com/*',
     '*://*.chat.z.ai/*',
     '*://*.chat.qwen.ai/*',
+    '*://*.lmarena.ai/*',
 
   ],
 
@@ -160,6 +161,11 @@ const manifest = {
     },
     {
       matches: ['*://*.chat.qwen.ai/*'],
+      js: ['content/index.iife.js'],
+      run_at: 'document_idle',
+    },
+    {
+      matches: ['*://*.lmarena.ai/*'],
       js: ['content/index.iife.js'],
       run_at: 'document_idle',
     },

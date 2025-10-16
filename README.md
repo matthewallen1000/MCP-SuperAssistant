@@ -48,6 +48,7 @@ MCP SuperAssistant is a Chrome extension that integrates the Model Context Proto
 - [GitHub Copilot](https://github.com/copilot)
 - [Mistral AI](https://chat.mistral.ai/)
 - [Kimi](https://kimi.com/)
+- [LMArena](https://lmarena.ai/)
 - [Qwen Chat](https://chat.qwen.ai/)
 - [Z Chat](https://chat.z.ai/)
 

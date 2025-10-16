@@ -26,6 +26,7 @@ import { ChatGPTAdapter } from './adapters/chatgpt.adapter';
 import { KimiAdapter } from './adapters/kimi.adapter';
 import { ZAdapter } from './adapters/z.adapter';
 import { QwenAdapter } from './adapters/qwenchat.adapter';
+import { LMArenaAdapter } from './adapters/lmarena.adapter';
 import { RemoteConfigPlugin } from './remote-config.plugin';
 
 // Types for lazy initialization
@@ -993,6 +994,28 @@ class PluginRegistry {
             urlCheckInterval: 1000,
           },
         },
+      });
+
+      // LMArena Adapter
+      this.registerAdapterFactory({
+        name: 'lmarena-adapter',
+        version: '1.0.0',
+        type: 'website-adapter',
+        hostnames: ['lmarena.ai'],
+        capabilities: ['text-insertion', 'form-submission', 'dom-manipulation'],
+        create: () => new LMArenaAdapter(),
+        config: {
+          id: 'lmarena-adapter',
+          name: 'LMArena Adapter',
+          description: 'Adapter for lmarena.ai (Chatbot Arena) - AI model comparison platform',
+          version: '1.0.0',
+          enabled: true,
+          priority: 5,
+          settings: {
+            logLevel: 'info',
+            urlCheckInterval: 1000
+          }
+        }
       });
 
       console.debug(`[PluginRegistry] Successfully registered SidebarPlugin (initialized) and ${this.adapterFactories.size} adapter factories (lazy)`);
